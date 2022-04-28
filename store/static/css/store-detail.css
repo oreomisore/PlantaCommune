@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@200&family=Rajdhani:wght@300&family=Righteous&family=Signika&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+
+/* Product detail view */
+.product-detail-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-family: "Rajdhani", sans-serif;
+  margin: 10px;
+  position: relative;
+  margin: auto;
+}
+
+.plant-detail-img {
+  width: 450px;
+  height: 500px;
+}
+
+.col {
+  width: 500px;
+  min-height: 600px;
+  height: auto;
+  margin: 5px;
+}
+
+.p-detail-container {
+  padding: 50px 0;
+  margin: 20px;
+  text-align: center;
+  position: relative;
+  left: 45%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.option-button {
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(0, 0, 0);
+  padding: 10px;
+  width: 150px;
+  height: 50px;
+  margin: 5px;
+}
+
+.option-button a {
+  text-decoration: none;
+  color: black;
+}
+
+.discount-price {
+  color: red;
+}

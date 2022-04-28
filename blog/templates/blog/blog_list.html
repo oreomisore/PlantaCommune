@@ -1,0 +1,68 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+<link rel="stylesheet" href="{%  static  'css/blog-list.css'  %}" />
+
+<main>
+  <!-- Page content -->
+  <h1>Planta Blog</h1>
+  <!-- Latest Blog Section  -->
+  <div class="new-post-container">
+    <div class="latest-msg-div">Read Our Latest Post...</div>
+
+    <img
+      class="new-card-image"
+      src="https://images.unsplash.com/photo-1591382696684-38c427c7547a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
+      alt="bg-image"
+    />
+
+    <div class="blog-card latest">
+      <div class="card">
+        <a href="{% url 'blog:post-detail' latestpost.pk %}">
+          <img
+            class="card-image"
+            src="{{ latestpost.img.url }}"
+            alt="blog-image"
+          />
+
+          <div class="card-details">
+            <span class="card-date">{{ latestpost.created_on }}</span>
+            <h2 class="card-title">{{ latestpost.title }}</h2>
+            <p class="card-body">{{ latestpost.body }}</p>
+            <p class="card-category">{{ latestpost.category }}</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Latest Blog Section  -->
+
+  <!-- Blog List -->
+  <h2>Posts</h2>
+  <div class="post-container">
+    <div class="blog-card-rows">
+      {% for post in posts %}
+      <!-- Blog card-->
+      <div class="blog-card">
+        <div class="card">
+          <a href="{% url 'blog:post-detail' post.pk %}">
+            <img class="card-image" src="{{ post.img.url }}" alt="blog-image" />
+          </a>
+          <div class="card-details">
+            <span class="card-date">{{ post.created_on }}</span>
+            <h2 class="card-title">{{ post.title }}</h2>
+            <p class="card-body">{{ post.body }}</p>
+            <p class="card-category">{{ post.category }}</p>
+          </div>
+        </div>
+      </div>
+      <!-- Blog card-->
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- Blog List -->
+
+  <!-- Page content -->
+</main>
+
+{% endblock %}

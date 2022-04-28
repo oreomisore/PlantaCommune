@@ -1,0 +1,79 @@
+<div class="page-content">
+  <!-- Page content -->
+  {% extends "base.html" %} {% load static %} {% block content %}
+  <link rel="stylesheet" href="{%  static  'css/store-main.css'  %}" />
+
+  <!-- Carousel Section  -->
+  <div class="carousel">
+    <button class="carousel__button carousel__button--left is-hidden">
+      <i class="fa-solid fa-angle-left"></i>
+    </button>
+    <div class="carousel__track-container">
+      <ul class="carousel__track">
+        {% for objects in obj %}
+        <li class="carousel__slide current-slide">
+          <img class="carousel-image" src="{{ objects.image.url }}" alt="" />
+          <div class="carousel-caption">
+            <h1>{{ objects.title }}</h1>
+            <h3>{{ objects.subtext_1 }}</h3>
+            <h3>{{ objects.subtext_2 }}</h3>
+            <h3>{{ objects.subtext_3 }}</h3>
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <button class="carousel__button carousel__button--right">
+      <i class="fa-solid fa-angle-right"></i>
+    </button>
+
+    <div class="carousel__nav">
+      {% for objects in obj %}
+      <button class="carousel__indicator current-slide"></button>
+      <!-- <button class="carousel__indicator"></button>
+      <button class="carousel__indicator"></button> -->
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- Carousel Section  -->
+
+  <!-- Product List -->
+  <div class="page-body">
+    <h1 class="header-1">All plants</h1>
+    <p>
+      Small, Medium & Large plants + Accessories (Pots, Hooks, Growing tools).
+      All pots are designed by our in house artis and plants grown on-site.
+    </p>
+    <div class="img-card-rows">
+      {% for product in products %}
+      <!--Product Card-->
+      <div class="product-card">
+        <div class="card">
+          <a
+            href="{% url 'store:product-detail' product.pk %}"
+            class="btn btn-primary"
+          >
+            <img
+              class="card-img-top"
+              width="50%"
+              src="{{ product.image.url }}"
+            />
+          </a>
+          <!-- <img class="card-img-top" width="25%" src="/static/img/plant1.png" /> -->
+
+          <div class="card-body">
+            <h5 class="card-title">{{ product.item_name }}</h5>
+            <p5 class="card-price">{{ product.price }}</p5>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  <!-- Product List -->
+</div>
+
+<script src="{% static 'js/script.js' %}" type="text/javascript"></script>
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/nav.css' %}" />"
+<header>
+  <h1 class="navbar-title">Planta</h1>
+  <nav class="header">
+    <ul class="navbar-list">
+            <li class="nav-element"><a>About</a></li>
+      <li class="nav-element">
+        <a href="{% url 'store:product-list' %}">Store</a>
+      </li>
+      <li class="nav-element"><a href="{% url 'blog:post-list' %}">Blog</a></li>
+      <li class="nav-element"><a>Contact</a></li>
+      <li class="nav-element"><i class="fa-solid fa-user"></i></li>
+
+    </ul>
+  </nav>
+</header>

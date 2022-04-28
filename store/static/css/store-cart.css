@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@200&family=Rajdhani:wght@300&family=Righteous&family=Signika&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+
+/* Shopping Cart */
+
+.cart-main {
+  padding: 20px;
+  position: relative;
+  height: fit-content;
+}
+
+.bg-image {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  bottom: 0px;
+  width: 100%;
+  height: 100%;
+  /* height: 100%; */
+  background-repeat: no-repeat;
+  object-fit: fill;
+  z-index: 1;
+}
+.cart-container {
+  background-color: white;
+  opacity: 0.95;
+  margin: 30px 30px;
+  border-radius: 20px;
+  z-index: 3;
+  /* border: 1px solid rgb(114, 116, 114); */
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  height: fit-content;
+  font-family: "Montserrat", sans-serif;
+  padding: 20px;
+  position: relative;
+}
+
+.cart-image {
+  width: 50px;
+  height: 80px;
+}
+
+table {
+  width: 550px;
+  margin: 0 auto;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  border-spacing: 20px;
+}
+
+td {
+  padding: 0 20px;
+  top: 50%;
+  left: 50%;
+}
+
+td:nth-child(6) {
+  background: hsl(hue, saturation, lightness);
+}
+
+tr {
+  padding-bottom: 5px;
+}
+
+.edit-button {
+  border: none;
+  border-radius: 20px;
+  width: 20px;
+  background-color: rgb(255, 255, 255);
+  padding: 2px;
+  margin: 3px;
+}
+
+.edit-button a {
+  color: black;
+  text-decoration: none;
+}
+
+.option-button {
+  background-color: white;
+  border: 1px solid black;
+  padding: 10px;
+  width: 150px;
+  height: 50px;
+  margin: 5px;
+}
+
+.option-button a {
+  text-decoration: none;
+  color: black;
+}

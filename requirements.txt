@@ -1,0 +1,4 @@
+Django==4.0.4
+django_countries==7.3.2
+stripe==2.73.0
+Pillow

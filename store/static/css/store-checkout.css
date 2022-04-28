@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@200&family=Rajdhani:wght@300&family=Righteous&family=Signika&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+
+/* Checkout */
+.container-checkout {
+  padding: 20px;
+  background-color: rgb(255, 255, 255);
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  font-family: "Rajdhani", sans-serif;
+  margin: 10px;
+  overflow: hidden;
+  justify-content: space-evenly;
+
+  /* padding: 20px; */
+}
+
+.card {
+  top: 50%;
+  left: 50%;
+  transition: transform(-50px, -50px);
+  /* border: 1px solid black; */
+  padding: 5px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin: 5px;
+}
+.form-control {
+  background-color: white;
+  border: 1px solid grey;
+  border-radius: 10px;
+  padding: 8px;
+  margin: 5px;
+}
+
+.custom-select {
+  background-color: white;
+  border: 1px solid grey;
+  border-radius: 10px;
+  width: 160px;
+  padding: 8px;
+  margin: 5px;
+}
+.col-md-8 {
+  padding: 20px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  border: 1px solid grey;
+}
+
+.col-md-4 {
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid grey;
+}
+
+.payment-container {
+  display: flex;
+  justify-content: space-between;
+  /* flex-direction: row; */
+}
+
+.option-button {
+  background-color: white;
+  border: 1px solid black;
+  padding: 10px;
+  width: 150px;
+  height: 50px;
+  margin: 5px;
+}
+
+.option-button a {
+  text-decoration: none;
+  color: black;
+}

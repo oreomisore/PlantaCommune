@@ -1,0 +1,59 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<link rel="stylesheet" href="{%  static  'css/store-detail.css'  %}" />
+
+<!--Product Image Wrapper-->
+<div class="item-container">
+  <!--Grid row-->
+  <div class="product-detail-row">
+    <!--Grid column-->
+    <div class="col">
+      <h1>{{ object.item_name }}</h1>
+      <img
+        class="plant-detail-img"
+        src="{{ object.image.url }}"
+        alt="product image"
+        width="80%"
+      />
+    </div>
+    <!--Grid column-->
+
+    <!--Grid column-->
+    <div class="col">
+      <div class="p-detail-container">
+        <div class="mb">
+          <span>{{ object.category }}</span>
+
+          <span>{{ object.description }}</span>
+        </div>
+        <p class="lead">
+          {% if object.discount_price %}
+          <span>
+            <del>${{ object.price }}</del>
+          </span>
+          <span> ${{ object.discount_price }} </span>
+          {% else %}
+          <strong><span>${{ object.price}}</span></strong>
+          {% endif %}
+        </p>
+        <div class="button-container">
+          <button class="option-button">
+            <a href="{{ object.get_add_to_cart_url }}" class="btn btn-primary"
+              >ADD TO CART</a
+            >
+          </button>
+          <button class="option-button">
+            <a
+              href="{{ object.get_remove_from_cart_url }}"
+              class="btn btn-danger"
+              >REMOVE FROM CART</a
+            >
+          </button>
+        </div>
+      </div>
+      <!--Content-->
+    </div>
+    <!--Grid column-->
+  </div>
+  <!--Grid row-->
+</div>
+{% endblock %}

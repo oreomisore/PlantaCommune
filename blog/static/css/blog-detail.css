@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
+
+.blog-details {
+  font-family: "Montserrat", sans-serif;
+  margin: 30px;
+}
+
+h1 {
+  font-size: 30px;
+  font-family: "Montserrat", sans-serif;
+  margin-left: 30px;
+}
+
+h3 {
+  font-size: 15px;
+  font-family: "Montserrat", sans-serif;
+
+  margin-left: 30px;
+}
+
+p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+}
+.card-image {
+  width: 50%;
+  height: 30%;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-left: 350px;
+}
+.blog-body {
+  /* background-color: red; */
+  position: relative;
+  padding: 20px;
+}
+
+.post-body {
+  width: 85%;
+  margin-left: 8%;
+  /* background-color: rgb(118, 82, 82); */
+}
+.post-body p {
+  text-align: justify;
+  margin: 30px;
+}
+.form-control,
+.btn {
+  border-radius: 10px;
+  border: 1px solid lightgrey;
+  width: 50%;
+  margin: 5px;
+  margin-left: 60px;
+}
+
+.btn {
+  border: 1px solid black;
+  background-color: white;
+  width: 60px;
+}
+
+.form_div {
+  display: flex;
+  flex-direction: column;
+}
+.comments-box {
+  margin: 30px;
+  /* border: 1px solid lightgrey; */
+  border-radius: 10px;
+  width: 100%;
+}
+.comment-title {
+  font-size: 30px;
+  font-family: "Montserrat", sans-serif;
+  margin-left: 60px;
+}
+.comment p {
+  text-align: left;
+  padding-left: 30px;
+  font-size: 10px;
+}
+
+hr {
+  background-color: lightgreen;
+}

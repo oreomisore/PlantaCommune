@@ -1,0 +1,115 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<link rel="stylesheet" href="{%  static  'css/store-cart.css'  %}" />
+
+<main class="cart-main">
+  <img
+    class="bg-image"
+    src="https://images.unsplash.com/photo-1583753075968-1236ccb83c66?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1054&q=80"
+    alt=""
+  />
+  <div class="cart-container">
+    <table class="table-container">
+      <h3><strong>Shopping Cart</strong></h3>
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for order_item in object.items.all %}
+        <tr>
+          <th scope="row">
+            <img class="cart-image" src="{{ order_item.item.image.url }}" />
+          </th>
+
+          <td>{{ order_item.item.item_name }}</td>
+          <td>
+            {% if order_item.item.discount_price %}
+            <del>${{ order_item.item.price }}</del>
+            ${{ order_item.item.discount_price}} {% else %}
+            <span>${{ order_item.item.price }}</span>
+            {% endif %}
+          </td>
+          <td>{{ order_item.quantity }}</td>
+          <td class="quantity-column">
+            <button class="edit-button">
+              <a href="{% url 'store:add-to-cart' order_item.item.pk %}"
+                >+</a
+              >
+            </button>
+            <button class="edit-button">
+              <a
+                href="{% url 'store:reduce-quantity-item' order_item.item.pk %}"
+                >-</a
+              >
+            </button>
+          </td>
+          <td>
+            {% if order_item.item.discount_price %}
+            ${{order_item.get_discount_item_price }}
+            <span class="badge badge-success"
+              >Saved ${{ order_item.get_amount_saved }}</span
+            >
+            {% else %} ${{ order_item.get_total_item_price }} {% endif %}
+            <a
+              href="{% url 'store:remove-from-cart' order_item.item.pk %}"
+            >
+            </a>
+          </td>
+        </tr>
+
+        {% empty %}
+        <tr>
+          <td colspan="5">Your Cart is Empty</td>
+        </tr>
+        <tr>
+          <td colspan="5">
+            <button class="function-button">
+              <a href="/" class="btn btn-primary float-right"
+                >Continue Shopping</a
+              >
+            </button>
+          </td>
+        </tr>
+        {% endfor %} {% if object.get_total_price %}
+        <tr></tr>
+        <tr></tr>
+
+        <tr class="order-price-detail">
+          <td colspan="2"><b>Total Order Price</b></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><b>${{ object.get_total_price }}</b></td>
+        </tr>
+        <tr>
+          <td></td>
+
+          <td colspan="2">
+            <button class="option-button">
+              <a href="products/" class="btn btn-primary float-right"
+                >Continue Shopping</a
+              >
+            </button>
+          </td>
+          <td colspan="2">
+            <button class="option-button">
+              <a href="checkout/" class="btn btn-warning float-right ml-2"
+                >Checkout</a
+              >
+            </button>
+          </td>
+
+          <td></td>
+        </tr>
+        {% endif %}
+      </tbody>
+    </table>
+  </div>
+</main>
+{% endblock content %}

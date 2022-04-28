@@ -1,0 +1,46 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+<link rel="stylesheet" href="{%  static  'css/blog-detail.css'  %}" />
+
+<section class="blog-details">
+  <h1>{{post.title}}</h1>
+  <h3>{{post.created_on}}</h3>
+  <h3>{{post.categories}}</h3>
+
+  {% comment %} author {% endcomment %}
+</section>
+
+<section class="blog-body">
+  <img class="card-image" src="{{ post.img.url }}" alt="blog-image" />
+  <div class='post-body'>  <p >{{post.body}}</p>
+  </div>
+</section>
+
+<section>
+  <h1 class="comment-title">Leave a comment:</h1>
+  <form action="" method="POST">
+    {% csrf_token %}
+    <div class="form_div">
+      {{ form.author }}
+      {{ form.body }}
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+
+  <div class="comments-box">
+    <h3>Comments:</h3>
+    <hr style="height:1px;border-width:0;background-color:lightgrey"/>
+
+    {% for comment in comments %}
+    <div class='comment'>
+    <p>
+      <b>{{ comment.author }}</b> commented:
+    </p>
+    <p>{{ comment.body }}</p>
+    <hr style="height:1px;border-width:0;background-color:lightgrey"/>
+  </div>
+
+    {% endfor %}
+  </.div>
+</section>
+
+{% endblock %}
